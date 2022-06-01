@@ -9,7 +9,7 @@
 
 body {
   margin: 0;
-  padding: 0;
+  padding: 4rem 0 0 0;
   color: #333;
   font-family: var(--type-first);
 }
@@ -40,4 +40,9 @@ button, input {
   max-width: 50rem;
   padding: 0 1rem;
   margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
 }
