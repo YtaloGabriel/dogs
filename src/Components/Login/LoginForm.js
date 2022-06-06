@@ -4,13 +4,16 @@ import useForm from '../../Hooks/useForm';
 import { UserContext } from '../../UserContext';
 import Button from '../Forms/Button';
 import Input from '../Forms/Input';
+import Error from '../Helper/Error';
+import Styles from '../css/login/LoginForm.module.css';
+import StylesBtn from '../Forms/FormsCss/Button.module.css';
 
 // Função geral da parte de login do formulário
 const LoginForm = () => {
   const username = useForm('');
   const password = useForm('');
 
-  const { userLogin } = React.useContext(UserContext);
+  const { userLogin, error, loading } = React.useContext(UserContext);
 
   // Verificar existência de usuário e, caso exista, pegar seu token.
   const handleLogin = async (event) => {
@@ -22,14 +25,28 @@ const LoginForm = () => {
   };
 
   return (
-    <section>
-      <h1>Login</h1>
-      <form onSubmit={handleLogin}>
+    <section className="animeLeft">
+      <h1 className="title">Login</h1>
+      <form className={Styles.form} onSubmit={handleLogin}>
         <Input label="Usuário" type="text" {...username} />
         <Input label="Senha" type="password" {...password} />
-        <Button text="Entrar" />
+        {loading ? (
+          <Button disabled text="Carregando..." />
+        ) : (
+          <Button text="Entrar" />
+        )}
+        <Error error={error} />
       </form>
-      <Link to="/login/create">Cadastro</Link>
+      <Link className={Styles.lost} to="/login/lost">
+        Perdeu a Senha?
+      </Link>
+      <div className={Styles.create}>
+        <h2 className={Styles.subtitle}>Cadastre-se</h2>
+        <p>Ainda não possui conta? Cadastre-se no site.</p>
+        <Link className={StylesBtn.button} to="/login/create">
+          Cadastro
+        </Link>
+      </div>
     </section>
   );
 };
