@@ -1,0 +1,23 @@
+.comments {
+  overflow-y: auto;
+  word-break: break-word;
+  padding: 0 2rem;
+}
+
+.comments > li {
+  margin-bottom: .5rem;
+  line-height: 1.2;
+}
+
+.comments::-webkit-scrollbar {
+  width: 8px;
+}
+
+.comments::-webkit-scrollbar-track {
+  background: transparent;        /* color of the tracking area */
+}
+
+.comments::-webkit-scrollbar-thumb {
+  background-color: #777;    /* color of the scroll thumb */
+  border-radius: .4rem;       /* roundness of the scroll thumb */
+}
