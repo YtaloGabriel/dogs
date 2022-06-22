@@ -8,6 +8,7 @@ import './App.css';
 import { UserStorage } from './UserContext';
 import User from './Components/User/User';
 import Photo from './Components/Photo/Photo';
+import UserProfile from './Components/User/UserProfile';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             <Route path="login/*" element={<Login />} />
             <Route path="account/*" element={<User />} />
             <Route path="photo/:id" element={<Photo />} />
+            <Route path="profile/:user" element={<UserProfile />} />
           </Routes>
           <Footer />
         </UserStorage>
