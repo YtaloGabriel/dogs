@@ -7,6 +7,7 @@ import Input from '../Forms/Input';
 import Error from '../Helper/Error';
 import Styles from '../css/login/LoginForm.module.css';
 import StylesBtn from '../Forms/FormsCss/Button.module.css';
+import Head from '../Helper/Head';
 
 // Função geral da parte de login do formulário
 const LoginForm = () => {
@@ -26,6 +27,7 @@ const LoginForm = () => {
 
   return (
     <section className="animeLeft">
+      <Head title="Login" />
       <h1 className="title">Login</h1>
       <form className={Styles.form} onSubmit={handleLogin}>
         <Input label="Usuário" type="text" {...username} />
