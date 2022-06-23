@@ -80,6 +80,19 @@
   margin-top: 5px;
 }
 
+.photo::-webkit-scrollbar {
+  width: 8px;
+}
+
+.photo::-webkit-scrollbar-track {
+  background: transparent;        /* color of the tracking area */
+}
+
+.photo::-webkit-scrollbar-thumb {
+  background-color: #777;    /* color of the scroll thumb */
+  border-radius: .4rem;       /* roundness of the scroll thumb */
+}
+
 @media (max-width: 64rem) {
   .photo {
     height: auto;

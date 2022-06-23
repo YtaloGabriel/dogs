@@ -1,7 +1,9 @@
 .comments {
   overflow-y: auto;
   word-break: break-word;
-  padding: 0 2rem;
+  padding: 0 2rem; 
+  height: max-content;
+  max-height: 15rem;
 }
 
 .single.comments {
@@ -22,6 +24,6 @@
 }
 
 .comments::-webkit-scrollbar-thumb {
-  background-color: #777;    /* color of the scroll thumb */
+  background-color: #aaa;    /* color of the scroll thumb */
   border-radius: .4rem;       /* roundness of the scroll thumb */
 }
