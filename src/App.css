@@ -53,6 +53,14 @@ a {
   color: #333;
 }
 
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh + 5rem);
+}
+
+.AppBody {flex: 1;}
+
 .title {
   font-family: var(--type-second);
   line-height: 1;
