@@ -11,18 +11,22 @@ import UserStats from './UserStats';
 const User = () => {
   const { data } = React.useContext(UserContext);
 
-  return (
-    <section className="container">
-      <Head title="Minha Conta" />
-      <UserHeader />
-      <Routes>
-        <Route path="/" element={<Feed user={data.id} />} />
-        <Route path="post" element={<UserPhotoPost />} />
-        <Route path="stats" element={<UserStats />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </section>
-  );
+  if (data) {
+    return (
+      <section className="container">
+        <Head title="Minha Conta" />
+        <UserHeader />
+        <Routes>
+          <Route path="/" element={<Feed user={data.id} />} />
+          <Route path="post" element={<UserPhotoPost />} />
+          <Route path="stats" element={<UserStats />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </section>
+    );
+  } else {
+    return null;
+  }
 };
 
 export default User;
