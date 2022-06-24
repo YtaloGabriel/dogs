@@ -18,7 +18,7 @@ const UserPhotoPost = () => {
   const navigate = useNavigate();
 
   React.useEffect(() => {
-    if (data) navigate('/account');
+    if (data) navigate('/dogs/account');
   }, [data, navigate]);
 
   const handleSubmit = (event) => {

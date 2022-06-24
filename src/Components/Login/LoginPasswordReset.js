@@ -35,7 +35,7 @@ const LoginPasswordReset = () => {
       });
 
       const { response } = await request(url, options);
-      if (response.ok) navigate('/login');
+      if (response.ok) navigate('/dogs/login');
     }
   };
 

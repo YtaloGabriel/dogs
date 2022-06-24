@@ -9,13 +9,13 @@ const UserHeader = () => {
 
   React.useEffect(() => {
     switch (location.pathname) {
-      case '/account':
+      case '/dogs/account':
         setTitle('Minha Conta');
         break;
-      case '/account/stats':
+      case '/dogs/account/stats':
         setTitle('Estatísticas');
         break;
-      case '/account/post':
+      case '/dogs/account/post':
         setTitle('Postar Foto');
         break;
       default:
