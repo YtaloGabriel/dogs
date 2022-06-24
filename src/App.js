@@ -19,12 +19,12 @@ function App() {
           <Header />
           <main className="AppBody">
             <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="login/*" element={<Login />} />
-              <Route path="account/*" element={<User />} />
-              <Route path="photo/:id" element={<Photo />} />
-              <Route path="profile/:user" element={<UserProfile />} />
-              <Route path="*" element={<NotFound />} />
+              <Route path="/dogs" element={<Home />} />
+              <Route path="/dogs/login/*" element={<Login />} />
+              <Route path="/dogs/account/*" element={<User />} />
+              <Route path="/dogs/photo/:id" element={<Photo />} />
+              <Route path="/dogs/profile/:user" element={<UserProfile />} />
+              <Route path="/dogs/*" element={<NotFound />} />
             </Routes>
           </main>
           <Footer />
