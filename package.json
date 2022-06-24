@@ -1,7 +1,7 @@
 {
   "name": "dogs",
   "version": "1.0.0",
-  "homepage": "https://ytalogabriel.github.io/dogs",
+  "homepage": "https://ytalogabriel.github.io/dogs/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
