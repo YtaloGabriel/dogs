@@ -5,7 +5,7 @@ import { UserContext } from '../../UserContext';
 import Button from '../Forms/Button';
 import Input from '../Forms/Input';
 import Error from '../Helper/Error';
-import Styles from '../css/login/LoginForm.module.css';
+import Styles from './LoginCss/LoginForm.module.css';
 import StylesBtn from '../Forms/FormsCss/Button.module.css';
 import Head from '../Helper/Head';
 
@@ -37,7 +37,7 @@ const LoginForm = () => {
         ) : (
           <Button text="Entrar" />
         )}
-        <Error error={error} />
+        <Error error={error && 'Dados incorretos.'} />
       </form>
       <Link className={Styles.lost} to="/login/lost">
         Perdeu a Senha?
