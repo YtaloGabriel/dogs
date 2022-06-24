@@ -39,13 +39,13 @@ const LoginForm = () => {
         )}
         <Error error={error && 'Dados incorretos.'} />
       </form>
-      <Link className={Styles.lost} to="/login/lost">
+      <Link className={Styles.lost} to="/dogs/login/lost">
         Perdeu a Senha?
       </Link>
       <div className={Styles.create}>
         <h2 className={Styles.subtitle}>Cadastre-se</h2>
         <p>Ainda não possui conta? Cadastre-se no site.</p>
-        <Link className={StylesBtn.button} to="/login/create">
+        <Link className={StylesBtn.button} to="/dogs/login/create">
           Cadastro
         </Link>
       </div>
