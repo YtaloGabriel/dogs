@@ -7,7 +7,7 @@ const UserStatsGraphs = ({ data }) => {
   const [total, setTotal] = React.useState(0);
 
   React.useEffect(() => {
-    if (data.length) {
+    if (data && data.length) {
       const graphData = data.map((item) => {
         return {
           x: item.title,
@@ -27,10 +27,10 @@ const UserStatsGraphs = ({ data }) => {
     <section className={`${Styles.graph} animeLeft`}>
       <div className={`${Styles.total} ${Styles.graphItem}`}>
         <p>
-          {data.length ? `Acessos: ${total}` : `Você ainda não possui fotos`}
+          {data?.length ? `Acessos: ${total}` : `Você ainda não possui fotos`}
         </p>
       </div>
-      {data.length ? (
+      {data?.length ? (
         <>
           <div className={Styles.graphItem}>
             <VictoryPie

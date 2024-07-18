@@ -9,15 +9,16 @@ import Styles from './FeedCss/FeedPhotos.module.css';
 const FeedPhotos = ({ page, user, setModalPhoto, setInfinite }) => {
   const { data, loading, error, request } = useFetch();
 
+  const fetchPhotos = React.useCallback(async () => {
+    const totalPhotos = 6;
+    const { url, options } = PHOTOS_GET(page, totalPhotos, user);
+    const { response, json } = await request(url, options);
+    if (response && response.ok && json.length < totalPhotos) setInfinite(false);
+  }, [page, request, setInfinite, user])
+
   React.useEffect(() => {
-    async function fetchPhotos() {
-      const total = 6;
-      const { url, options } = PHOTOS_GET(page, total, user);
-      const { response, json } = await request(url, options);
-      if (response && response.ok && json.length < total) setInfinite(false);
-    }
     fetchPhotos();
-  }, [request, user, page, setInfinite]);
+  }, [fetchPhotos]);
 
   if (error) return <Error error={error} />;
   if (loading) return <Loading />;

@@ -50,28 +50,30 @@ export const UserStorage = ({ children }) => {
     }
   };
 
-  React.useEffect(() => {
-    const autoLogin = async () => {
-      const token = window.localStorage.getItem('token');
-      if (token) {
-        try {
-          setError(null);
-          setLoading(true);
-          const { url, options } = TOKEN_VALIDATE_POST(token);
-          const response = await fetch(url, options);
-          if (!response.ok) throw new Error('Token inválido.');
-          await getUser(token);
-        } catch (err) {
-          userLogout();
-        } finally {
-          setLoading(false);
-        }
-      } else {
-        setLogin(false);
+  const autoLogin = React.useCallback(async () => {
+    const token = window.localStorage.getItem('token');
+
+    if (token) {
+      try {
+        setError(null);
+        setLoading(true);
+        const { url, options } = TOKEN_VALIDATE_POST(token);
+        const response = await fetch(url, options);
+        if (!response.ok) throw new Error('Token inválido.');
+        await getUser(token);
+      } catch (err) {
+        userLogout();
+      } finally {
+        setLoading(false);
       }
-    };
+    } else {
+      setLogin(false);
+    }
+  }, [userLogout])
+
+  React.useEffect(() => {
     autoLogin();
-  }, [userLogout]);
+  }, [autoLogin]);
 
   return (
     <UserContext.Provider
