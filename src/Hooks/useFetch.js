@@ -26,7 +26,7 @@ const useFetch = () => {
     }
   }, []);
 
-  return { data, loading, error, request };
-};
+  return { data, loading, error, request }
+}
 
 export default useFetch;
