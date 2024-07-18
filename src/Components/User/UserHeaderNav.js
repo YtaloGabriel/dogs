@@ -45,7 +45,7 @@ const UserHeaderNav = () => {
           <Stats />
           {mobile && 'Estatísticas'}
         </NavLink>
-        <button onClick={userLogout}>
+        <button onClick={userLogout} id='exitButton'>
           <Exit />
           {mobile && 'Sair'}
         </button>
